@@ -243,7 +243,7 @@ class AnalisisController extends Controller
         }
 
         //10. Kesimpulan
-        if ($skorProduktif >=80 && $skorRebahan <=40 && $skorSosial >=50) {
+        if ($skorProduktif >=80 && $skorRebahan <=40 && $skorSosial >=60) {
             $kesimpulan = "Widihh rajin, suka bergaul sama teman, dan tidak malas nihh, ini baru bagus";
         } elseif ($skorProduktif >=50 && $skorRebahan <=50 && $skorSosial >=50) {
             $kesimpulan = "Yaa lumayan sih, tapi harus lebih rajin lagi dan jangan malas-malasan";
