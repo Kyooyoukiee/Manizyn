@@ -10,7 +10,7 @@ class AnalisisController extends Controller
     {
         //1. Validasi input
         $data = $request->validate([
-            'nama' => 'required|alpha|max:255',
+            'nama' => ['required', 'regex:/^[\pL\s]+$/u', 'max:255'],
             'umur' => 'required|integer|min:1',
             'hobi' => 'required',
             'jam_tidur' => 'required|integer|min:1|max:24',
@@ -20,7 +20,7 @@ class AnalisisController extends Controller
         ],
         [
             'nama.required' => 'Eits, namanya jangan dikosongin dong bro.',
-            'nama.alpha' => 'Namanya huruf doang ya, jangan pake angka atau simbol aneh-aneh.',
+            'nama.regex' => 'Namanya huruf doang ya, jangan pake angka atau simbol aneh-aneh.',
             'nama.max' => 'Buset, namanya panjang amat, maksimal 255 karakter ya.',
             'umur.required' => 'Umurnya diisi dulu dong, jangan malu-malu.',
             'umur.integer' => 'Umur itu angka bro, bukan huruf.',
